@@ -20,7 +20,7 @@ def Generator_of_List(N):
     :param N: размер массива
     :return: список со случайными значениями от 0 до 9
     '''
-    list1 = [randint(0,9) for i in range(N)]
+    list1 = [randint(0,9) for _ in range(N)]
     print(list1)
     return list1
 

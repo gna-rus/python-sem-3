@@ -16,12 +16,16 @@
 from random import randint
 
 def Generator_of_List(N):
+    '''
+     :param N: размер массива
+     :return: список со случайными значениями от 0 до 9
+     '''
     list1 = [randint(0,9) for i in range(N)]
     print(list1)
     return list1
 
 A = int(input("Введите размер массива: "))
 X = int(input("Введите число: "))
-print(f"Х встречается в массиве А - {list(Generator_of_List(A)).count(X)} раз")
+print(f"Х встречается в массиве А - {Generator_of_List(A).count(X)} раз")
 
 

@@ -43,7 +43,7 @@ Eng_letter = {1: "AEIOULNSTR", 2: "DG", 3: "BCMP", 4:"FHVWY", 5: "K", 8: "JX", 1
 Rus_letter = {1: "АВЕИНОРСТ", 2: "ДКЛМПУ", 3: "БГЁЬЯ", 4:"ЙЫ", 5: "ЖЗХЦЧ", 8: "ШЭЮ", 10: "ФЩЪ"}
 
 word = input().upper() # вводим слово в консоль и сразу переводим его в верхний регистр
-if ord(word[0]) >= 65 and ord(word[0]) < 90: # определяю на каком языке было введено слово по первой букве
+if ord(word[0]) >= 65 and ord(word[0]) <= 90: # определяю на каком языке было введено слово по первой букве
     print(Ent_decoder(Eng_letter, word))
 else:
     print(Rus_decoder(Rus_letter, word))

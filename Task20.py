@@ -24,10 +24,11 @@ def decoder(letter, word):
             if i in letter[j]:
                 count += j
     return count
-
+   
+# словарь со стоимостью букв
 letter = {1: "AEIOULNSTRАВЕИНОРСТ", 2: "DGДКЛМПУ", 3: "BCMPБГЁЬЯ", 
           4:"FHVWYЙЫ", 5: "KЖЗХЦЧ", 8: "JXШЭЮ", 10: "QZФЩЪ"}
-# словари со стоимостью букв
+
 word = input().upper() # вводим слово в консоль и сразу переводим его в верхний регистр
 print(decoder(letter, word))
 

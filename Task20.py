@@ -12,41 +12,24 @@
     12
 
 '''
-def Ent_decoder(Eng_letter, word):
+def decoder(letter, word):
     '''
-    :param Eng_letter: словарь, ключи словаря - баллы за буквы, значения словаря - буквы
+    :param letter: словарь, ключи словаря - баллы за буквы, значения словаря - буквы
     :param word: слово которое надо разложить и присвоить каждой букве балл
     :return: общая сумма баллов
     '''
     count = 0
     for i in word:
-        for j in Eng_letter:
-            if i in Eng_letter[j]:
+        for j in letter:
+            if i in letter[j]:
                 count += j
     return count
 
-def Rus_decoder(Rus_letter, word):
-    '''
-    :param Rus_letter: словарь, ключи словаря - баллы за буквы, значения словаря - буквы
-    :param word: слово которое надо разложить и присвоить каждой букве балл
-    :return: общая сумма баллов
-    '''
-    count = 0
-    for i in word:
-        for j in Rus_letter:
-            if i in Rus_letter[j]:
-                count += j
-    return count
-
-
-Eng_letter = {1: "AEIOULNSTR", 2: "DG", 3: "BCMP", 4:"FHVWY", 5: "K", 8: "JX", 10: "QZ"} # словари со стоимостью букв
-Rus_letter = {1: "АВЕИНОРСТ", 2: "ДКЛМПУ", 3: "БГЁЬЯ", 4:"ЙЫ", 5: "ЖЗХЦЧ", 8: "ШЭЮ", 10: "ФЩЪ"}
-
+letter = {1: "AEIOULNSTRАВЕИНОРСТ", 2: "DGДКЛМПУ", 3: "BCMPБГЁЬЯ", 
+          4:"FHVWYЙЫ", 5: "KЖЗХЦЧ", 8: "JXШЭЮ", 10: "QZФЩЪ"}
+# словари со стоимостью букв
 word = input().upper() # вводим слово в консоль и сразу переводим его в верхний регистр
-if ord(word[0]) >= 65 and ord(word[0]) <= 90: # определяю на каком языке было введено слово по первой букве
-    print(Ent_decoder(Eng_letter, word))
-else:
-    print(Rus_decoder(Rus_letter, word))
+print(decoder(letter, word))
 
 
 
